@@ -19,7 +19,6 @@ export class LoginPage extends BasePage {
         await this.page.goto(loginUrl)
     }
     async auth(user: User) {
-        //FILL -
         await this.loginField.type(user.login)
         await this.passwordField.type(user.password)
         await this.loginButton.click();

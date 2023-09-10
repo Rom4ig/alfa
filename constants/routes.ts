@@ -1,2 +1,3 @@
 export const loginUrl = "/login";
-export const bucketUrl = "/bucket";
+export const bucketUrl = "/basket";
+export const loginFullUrl = "https://enotes.pointschool.ru/login";
