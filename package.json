@@ -1,12 +1,13 @@
 {
   "name": "alfa",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test --config=config/playwright.config.ts --headed --project=chromium",
     "lint": "eslint . --ext .ts",
-    "lint_fix": "eslint . --ext .ts --fix"
+    "lint_fix": "eslint . --ext .ts --fix",
+    "allure": "npx allure generate ./allure-results --clean"
   },
   "keywords": [],
   "author": "Rom4ig",
@@ -14,6 +15,7 @@
   "devDependencies": {
     "@playwright/test": "^1.37.1",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "allure-commandline": "^2.24.0",
     "allure-playwright": "^2.7.0",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
