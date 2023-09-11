@@ -1,13 +1,15 @@
 {
   "name": "alfa",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test --config=config/playwright.config.ts --headed --project=chromium",
     "lint": "eslint . --ext .ts",
     "lint_fix": "eslint . --ext .ts --fix",
-    "allure": "npx allure generate ./allure-results --clean"
+    "allure": "npx allure generate ./allure-results --clean",
+    "allure_open": "npx allure open allure-report"
+
   },
   "keywords": [],
   "author": "Rom4ig",
