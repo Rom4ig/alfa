@@ -1,8 +1,7 @@
-import {expect, type Locator, type Page} from '@playwright/test';
-import {BasePage} from "./basePage";
-import User from "../models/user";
-import {loginUrl} from "../constants/routes";
-
+import { type Locator, type Page } from '@playwright/test';
+import { BasePage } from './basePage';
+import type User from '../models/user';
+import { loginUrl } from '../constants/routes';
 
 export class LoginPage extends BasePage {
   readonly loginField: Locator;
@@ -10,19 +9,19 @@ export class LoginPage extends BasePage {
   readonly loginButton: Locator;
 
   constructor(page: Page) {
-    super(page)
-    this.loginField = page.locator('#loginform-username')
-    this.passwordField = page.locator('#loginform-password')
-    this.loginButton = page.getByRole('button', {name: 'Вход'});
+    super(page);
+    this.loginField = page.locator('#loginform-username');
+    this.passwordField = page.locator('#loginform-password');
+    this.loginButton = page.getByRole('button', { name: 'Вход' });
   }
 
   async openPage() {
-    await this.page.goto(loginUrl)
+    await this.page.goto(loginUrl);
   }
 
   async auth(user: User) {
-    await this.loginField.type(user.login)
-    await this.passwordField.type(user.password)
+    await this.loginField.type(user.login);
+    await this.passwordField.type(user.password);
     await this.loginButton.click();
   }
 }

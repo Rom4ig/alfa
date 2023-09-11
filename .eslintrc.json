@@ -1,0 +1,119 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:playwright/playwright-test",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "jest"
+  ],
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module",
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  "rules": {
+    "playwright/no-conditional-in-test": "off",
+    "no-restricted-syntax": [
+      "error",
+      "ForInStatement",
+      "LabeledStatement",
+      "WithStatement"
+    ],
+    "no-shadow": [
+      "off"
+    ],
+    "@typescript-eslint/no-shadow": [
+      "off"
+    ],
+    "radix": [
+      "off"
+    ],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
+    "no-empty-pattern": [
+      "off"
+    ],
+    "class-methods-use-this": [
+      "off"
+    ],
+    "no-param-reassign": [
+      "off"
+    ],
+    "no-return-assign": [
+      "off"
+    ],
+    "@typescript-eslint/no-loop-func": [
+      "off"
+    ],
+    "no-underscore-dangle": [
+      "off",
+      {
+        "allowAfterThis": true
+      }
+    ],
+    "no-await-in-loop": "off",
+    "no-loop-func": "off",
+    "func-call-spacing": [
+      "error"
+    ],
+    "playwright/no-page-pause": [
+      "error"
+    ],
+    "playwright/missing-playwright-await": [
+      "error"
+    ],
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "jsxSingleQuote": false,
+        "semi": true,
+        "tabWidth": 2,
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "arrowParens": "always",
+        "trailingComma": "none",
+        "endOfLine": "auto"
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "ignoreStrings": true,
+        "ignoreUrls": true,
+        "code": 120,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "@typescript-eslint/lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ]
+  },
+  "root": true
+}

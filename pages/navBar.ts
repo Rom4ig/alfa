@@ -1,5 +1,5 @@
-import {expect, type Locator, type Page} from '@playwright/test';
-import {BucketPopUp} from "./bucketPopUp";
+import { type Locator, type Page } from '@playwright/test';
+import { BucketPopUp } from './bucketPopUp';
 
 export class NavBar {
   readonly page: Page;
@@ -8,17 +8,17 @@ export class NavBar {
   readonly bucketCountItems: Locator;
   constructor(page: Page) {
     this.page = page;
-    this.bucketButton = page.locator('#dropdownBasket')
-    this.bucketPopUp = new BucketPopUp(page)
-    this.bucketCountItems = page.locator('.basket-count-items')
+    this.bucketButton = page.locator('#dropdownBasket');
+    this.bucketPopUp = new BucketPopUp(page);
+    this.bucketCountItems = page.locator('.basket-count-items');
   }
 
   async cleanBucket() {
-    await this.bucketButton.click()
+    await this.bucketButton.click();
     await this.bucketPopUp.cleanBucket();
   }
 
   async getItemCountsInBucket(): Promise<string> {
-    return this.bucketCountItems.textContent()
+    return await this.bucketCountItems.textContent();
   }
 }
