@@ -8,6 +8,7 @@ test.describe('Корзина', () => {
     const bucketPage = new BucketPage(page);
     await mainPage.openPage();
     await mainPage.navBar.cleanBucket();
+
     await test.step('step_1 Кликнуть на иконку корзины', async () => {
       await mainPage.navBar.bucketButton.click();
       expect(await mainPage.navBar.bucketPopUp.isOpened()).toBeTruthy();
