@@ -44,4 +44,21 @@ export class MainPage extends BasePage {
       await items.nth(itemNumber - 1).click();
     }
   }
+
+  //Additional method
+  async addItemsByNumberAndDiscountFilling(count: number, isDiscount: boolean = false, itemNumber: number) {
+    const items = isDiscount
+      ? this.page.locator("//div[contains(@class, 'note-list')]//*[contains(@class, 'hasDiscount')]")
+      : this.page.locator(
+          "//div[contains(@class, 'note-list')]//*[not(contains(@class, 'hasDiscount')) and contains(@class, 'note-item')]"
+        );
+    await items
+      .nth(itemNumber - 1)
+      .locator('input')
+      .fill(count.toString());
+    await items
+      .nth(itemNumber - 1)
+      .locator('button')
+      .click();
+  }
 }
