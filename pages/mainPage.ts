@@ -34,14 +34,14 @@ export class MainPage extends BasePage {
     }
   }
 
-  async addItemsByNumberAndDiscount(count: number, isDiscount: boolean = false, number: number) {
+  async addItemsByNumberAndDiscount(count: number, isDiscount: boolean = false, itemNumber: number) {
     const items = isDiscount
       ? this.page.locator("//div[contains(@class, 'note-list')]//*[contains(@class, 'hasDiscount')]//button")
       : this.page.locator(
           "//div[contains(@class, 'note-list')]//*[not(contains(@class, 'hasDiscount')) and contains(@class, 'note-item')]//button"
         );
     for (let i = 0; i < count; i++) {
-      await items.nth(number - 1).click();
+      await items.nth(itemNumber - 1).click();
     }
   }
 }

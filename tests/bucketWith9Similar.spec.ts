@@ -10,7 +10,7 @@ test.describe('Корзина', () => {
     await mainPage.navBar.cleanBucket();
 
     await test.step('step_1 Добавить в корзину 9 товаров одного наименования со скидкой', async () => {
-      await mainPage.addItemsByNumberAndDiscount(9, true, 9);
+      await mainPage.addItemsByNumberAndDiscount(9, true, 1);
       expect(await mainPage.navBar.getItemCountsInBucket()).toEqual('9');
     });
 
